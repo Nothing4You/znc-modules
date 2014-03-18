@@ -3,6 +3,7 @@ import znc
 class kill_notice(znc.Module):
     module_types = [znc.CModInfo.GlobalModule]
     description = "This global module sends a notice to all admins whenever a user is killed off a server."
+    wiki_page = "kill_notice"
 
     def OnRaw(self, line):
         cmd = str(line).split()[0].lower()
