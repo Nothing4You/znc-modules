@@ -11,7 +11,8 @@ class kill_notice(znc.Module):
         if cmd == "error":
             rest = " ".join(str(line).split()[1:]).lower()
 
-            if "lined" in rest or "killed" in srest:
+            if "lined" in rest or "kill" in rest or "banned" in rest:
+            #if "lined" in rest or "killed" in srest:
                 rest = " ".join(str(line).split()[1:])
                 self.AdminNotify(str(self.GetUser().GetUserName())+" (killed: "+rest+")")
 
