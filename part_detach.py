@@ -13,3 +13,11 @@ class part_detach(znc.Module):
             return znc.HALTCORE
 
         return znc.CONTINUE
+
+    def OnModCommand(self, line):
+        if line.strip().lower() == "help":
+            self.PutModule("Usage:")
+            self.PutModule("A normal PART detaches the channel")
+            self.PutModule("If another PART is sent when the channel already is detached, it will actually execute the PART.")
+        else:
+            self.PutModule("Unknown command!")
